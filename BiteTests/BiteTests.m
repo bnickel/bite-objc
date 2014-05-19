@@ -8,8 +8,12 @@
 
 #import <XCTest/XCTest.h>
 #import "Bite.h"
+#import "PrimeEnumerator.h"
 
 @interface BiteTests : XCTestCase
+{
+    PrimeEnumerator *primes;
+}
 
 @end
 
@@ -18,7 +22,7 @@
 - (void)setUp
 {
     [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+    primes = [[PrimeEnumerator alloc] init];
 }
 
 - (void)tearDown
@@ -27,9 +31,21 @@
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testThatTakeLimitsTheAmountTaken
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    XCTAssertEqual(10, [[[BITE(primes) take:10] array] count], @"Take should have limited the count.");
+    XCTAssertEqual(50, [[[BITE(primes) take:50] array] count], @"Take should have limited the count.");
+}
+
+- (void)testThatTakeLimitsTheNumberOfIteratorExecutions
+{
+    NSArray *items;
+    
+    items = [[BITE(primes) take:10] array];
+    XCTAssertEqual(items.count, primes.knownPrimes.count, @"The enumerator should have stopped after %lu calls.", (unsigned long)items.count);
+    
+    items = [[BITE(primes) take:19] array];
+    XCTAssertEqual(items.count, primes.knownPrimes.count, @"The enumerator should have stopped after %lu calls.", (unsigned long)items.count);
 }
 
 @end

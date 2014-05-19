@@ -23,6 +23,7 @@
 		EB10E904192A700F00D519D8 /* BITEFilterEnumerator.m in Sources */ = {isa = PBXBuildFile; fileRef = EB10E8FE192A700F00D519D8 /* BITEFilterEnumerator.m */; };
 		EB10E905192A71D300D519D8 /* BITETuple.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = EB10E8F3192A700F00D519D8 /* BITETuple.h */; };
 		EB10E906192A71D300D519D8 /* BITEEnumerator.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = EB10E8F5192A700F00D519D8 /* BITEEnumerator.h */; };
+		EB10E909192A745F00D519D8 /* PrimeEnumerator.m in Sources */ = {isa = PBXBuildFile; fileRef = EB10E908192A745F00D519D8 /* PrimeEnumerator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,8 @@
 		EB10E8FC192A700F00D519D8 /* BITEMapEnumerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BITEMapEnumerator.m; sourceTree = "<group>"; };
 		EB10E8FD192A700F00D519D8 /* BITEFilterEnumerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BITEFilterEnumerator.h; sourceTree = "<group>"; };
 		EB10E8FE192A700F00D519D8 /* BITEFilterEnumerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BITEFilterEnumerator.m; sourceTree = "<group>"; };
+		EB10E907192A745F00D519D8 /* PrimeEnumerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrimeEnumerator.h; sourceTree = "<group>"; };
+		EB10E908192A745F00D519D8 /* PrimeEnumerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrimeEnumerator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +163,8 @@
 			isa = PBXGroup;
 			children = (
 				EB10E8E9192A6D1B00D519D8 /* BiteTests.m */,
+				EB10E907192A745F00D519D8 /* PrimeEnumerator.h */,
+				EB10E908192A745F00D519D8 /* PrimeEnumerator.m */,
 				EB10E8E4192A6D1B00D519D8 /* Supporting Files */,
 			);
 			path = BiteTests;
@@ -268,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB10E909192A745F00D519D8 /* PrimeEnumerator.m in Sources */,
 				EB10E8EA192A6D1B00D519D8 /* BiteTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
