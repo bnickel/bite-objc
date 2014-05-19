@@ -1,0 +1,456 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EB10E8CE192A6D1B00D519D8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB10E8CD192A6D1B00D519D8 /* Foundation.framework */; };
+		EB10E8D3192A6D1B00D519D8 /* Bite.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = EB10E8D2192A6D1B00D519D8 /* Bite.h */; };
+		EB10E8DC192A6D1B00D519D8 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB10E8DB192A6D1B00D519D8 /* XCTest.framework */; };
+		EB10E8DD192A6D1B00D519D8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB10E8CD192A6D1B00D519D8 /* Foundation.framework */; };
+		EB10E8DF192A6D1B00D519D8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB10E8DE192A6D1B00D519D8 /* UIKit.framework */; };
+		EB10E8E2192A6D1B00D519D8 /* libBite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB10E8CA192A6D1B00D519D8 /* libBite.a */; };
+		EB10E8E8192A6D1B00D519D8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EB10E8E6192A6D1B00D519D8 /* InfoPlist.strings */; };
+		EB10E8EA192A6D1B00D519D8 /* BiteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB10E8E9192A6D1B00D519D8 /* BiteTests.m */; };
+		EB10E8FF192A700F00D519D8 /* BITETuple.m in Sources */ = {isa = PBXBuildFile; fileRef = EB10E8F4192A700F00D519D8 /* BITETuple.m */; };
+		EB10E900192A700F00D519D8 /* BITEEnumerator.m in Sources */ = {isa = PBXBuildFile; fileRef = EB10E8F6192A700F00D519D8 /* BITEEnumerator.m */; };
+		EB10E901192A700F00D519D8 /* BITESkipEnumerator.m in Sources */ = {isa = PBXBuildFile; fileRef = EB10E8F8192A700F00D519D8 /* BITESkipEnumerator.m */; };
+		EB10E902192A700F00D519D8 /* BITETakeEnumerator.m in Sources */ = {isa = PBXBuildFile; fileRef = EB10E8FA192A700F00D519D8 /* BITETakeEnumerator.m */; };
+		EB10E903192A700F00D519D8 /* BITEMapEnumerator.m in Sources */ = {isa = PBXBuildFile; fileRef = EB10E8FC192A700F00D519D8 /* BITEMapEnumerator.m */; };
+		EB10E904192A700F00D519D8 /* BITEFilterEnumerator.m in Sources */ = {isa = PBXBuildFile; fileRef = EB10E8FE192A700F00D519D8 /* BITEFilterEnumerator.m */; };
+		EB10E905192A71D300D519D8 /* BITETuple.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = EB10E8F3192A700F00D519D8 /* BITETuple.h */; };
+		EB10E906192A71D300D519D8 /* BITEEnumerator.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = EB10E8F5192A700F00D519D8 /* BITEEnumerator.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EB10E8E0192A6D1B00D519D8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB10E8C2192A6D1B00D519D8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EB10E8C9192A6D1B00D519D8;
+			remoteInfo = Bite;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EB10E8C8192A6D1B00D519D8 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				EB10E905192A71D300D519D8 /* BITETuple.h in CopyFiles */,
+				EB10E906192A71D300D519D8 /* BITEEnumerator.h in CopyFiles */,
+				EB10E8D3192A6D1B00D519D8 /* Bite.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		EB10E8CA192A6D1B00D519D8 /* libBite.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBite.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB10E8CD192A6D1B00D519D8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		EB10E8D1192A6D1B00D519D8 /* Bite-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bite-Prefix.pch"; sourceTree = "<group>"; };
+		EB10E8D2192A6D1B00D519D8 /* Bite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bite.h; sourceTree = "<group>"; };
+		EB10E8DA192A6D1B00D519D8 /* BiteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BiteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB10E8DB192A6D1B00D519D8 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		EB10E8DE192A6D1B00D519D8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		EB10E8E5192A6D1B00D519D8 /* BiteTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BiteTests-Info.plist"; sourceTree = "<group>"; };
+		EB10E8E7192A6D1B00D519D8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EB10E8E9192A6D1B00D519D8 /* BiteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BiteTests.m; sourceTree = "<group>"; };
+		EB10E8F3192A700F00D519D8 /* BITETuple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BITETuple.h; sourceTree = "<group>"; };
+		EB10E8F4192A700F00D519D8 /* BITETuple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BITETuple.m; sourceTree = "<group>"; };
+		EB10E8F5192A700F00D519D8 /* BITEEnumerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BITEEnumerator.h; sourceTree = "<group>"; };
+		EB10E8F6192A700F00D519D8 /* BITEEnumerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BITEEnumerator.m; sourceTree = "<group>"; };
+		EB10E8F7192A700F00D519D8 /* BITESkipEnumerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BITESkipEnumerator.h; sourceTree = "<group>"; };
+		EB10E8F8192A700F00D519D8 /* BITESkipEnumerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BITESkipEnumerator.m; sourceTree = "<group>"; };
+		EB10E8F9192A700F00D519D8 /* BITETakeEnumerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BITETakeEnumerator.h; sourceTree = "<group>"; };
+		EB10E8FA192A700F00D519D8 /* BITETakeEnumerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BITETakeEnumerator.m; sourceTree = "<group>"; };
+		EB10E8FB192A700F00D519D8 /* BITEMapEnumerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BITEMapEnumerator.h; sourceTree = "<group>"; };
+		EB10E8FC192A700F00D519D8 /* BITEMapEnumerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BITEMapEnumerator.m; sourceTree = "<group>"; };
+		EB10E8FD192A700F00D519D8 /* BITEFilterEnumerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BITEFilterEnumerator.h; sourceTree = "<group>"; };
+		EB10E8FE192A700F00D519D8 /* BITEFilterEnumerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BITEFilterEnumerator.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EB10E8C7192A6D1B00D519D8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB10E8CE192A6D1B00D519D8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB10E8D7192A6D1B00D519D8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB10E8DC192A6D1B00D519D8 /* XCTest.framework in Frameworks */,
+				EB10E8DF192A6D1B00D519D8 /* UIKit.framework in Frameworks */,
+				EB10E8DD192A6D1B00D519D8 /* Foundation.framework in Frameworks */,
+				EB10E8E2192A6D1B00D519D8 /* libBite.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EB10E8C1192A6D1B00D519D8 = {
+			isa = PBXGroup;
+			children = (
+				EB10E8CF192A6D1B00D519D8 /* Bite */,
+				EB10E8E3192A6D1B00D519D8 /* BiteTests */,
+				EB10E8CC192A6D1B00D519D8 /* Frameworks */,
+				EB10E8CB192A6D1B00D519D8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EB10E8CB192A6D1B00D519D8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EB10E8CA192A6D1B00D519D8 /* libBite.a */,
+				EB10E8DA192A6D1B00D519D8 /* BiteTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EB10E8CC192A6D1B00D519D8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EB10E8CD192A6D1B00D519D8 /* Foundation.framework */,
+				EB10E8DB192A6D1B00D519D8 /* XCTest.framework */,
+				EB10E8DE192A6D1B00D519D8 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EB10E8CF192A6D1B00D519D8 /* Bite */ = {
+			isa = PBXGroup;
+			children = (
+				EB10E8D2192A6D1B00D519D8 /* Bite.h */,
+				EB10E8F3192A700F00D519D8 /* BITETuple.h */,
+				EB10E8F4192A700F00D519D8 /* BITETuple.m */,
+				EB10E8F5192A700F00D519D8 /* BITEEnumerator.h */,
+				EB10E8F6192A700F00D519D8 /* BITEEnumerator.m */,
+				EB10E8F7192A700F00D519D8 /* BITESkipEnumerator.h */,
+				EB10E8F8192A700F00D519D8 /* BITESkipEnumerator.m */,
+				EB10E8F9192A700F00D519D8 /* BITETakeEnumerator.h */,
+				EB10E8FA192A700F00D519D8 /* BITETakeEnumerator.m */,
+				EB10E8FB192A700F00D519D8 /* BITEMapEnumerator.h */,
+				EB10E8FC192A700F00D519D8 /* BITEMapEnumerator.m */,
+				EB10E8FD192A700F00D519D8 /* BITEFilterEnumerator.h */,
+				EB10E8FE192A700F00D519D8 /* BITEFilterEnumerator.m */,
+				EB10E8D0192A6D1B00D519D8 /* Supporting Files */,
+			);
+			path = Bite;
+			sourceTree = "<group>";
+		};
+		EB10E8D0192A6D1B00D519D8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EB10E8D1192A6D1B00D519D8 /* Bite-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EB10E8E3192A6D1B00D519D8 /* BiteTests */ = {
+			isa = PBXGroup;
+			children = (
+				EB10E8E9192A6D1B00D519D8 /* BiteTests.m */,
+				EB10E8E4192A6D1B00D519D8 /* Supporting Files */,
+			);
+			path = BiteTests;
+			sourceTree = "<group>";
+		};
+		EB10E8E4192A6D1B00D519D8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EB10E8E5192A6D1B00D519D8 /* BiteTests-Info.plist */,
+				EB10E8E6192A6D1B00D519D8 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EB10E8C9192A6D1B00D519D8 /* Bite */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB10E8ED192A6D1B00D519D8 /* Build configuration list for PBXNativeTarget "Bite" */;
+			buildPhases = (
+				EB10E8C6192A6D1B00D519D8 /* Sources */,
+				EB10E8C7192A6D1B00D519D8 /* Frameworks */,
+				EB10E8C8192A6D1B00D519D8 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Bite;
+			productName = Bite;
+			productReference = EB10E8CA192A6D1B00D519D8 /* libBite.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		EB10E8D9192A6D1B00D519D8 /* BiteTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB10E8F0192A6D1B00D519D8 /* Build configuration list for PBXNativeTarget "BiteTests" */;
+			buildPhases = (
+				EB10E8D6192A6D1B00D519D8 /* Sources */,
+				EB10E8D7192A6D1B00D519D8 /* Frameworks */,
+				EB10E8D8192A6D1B00D519D8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EB10E8E1192A6D1B00D519D8 /* PBXTargetDependency */,
+			);
+			name = BiteTests;
+			productName = BiteTests;
+			productReference = EB10E8DA192A6D1B00D519D8 /* BiteTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EB10E8C2192A6D1B00D519D8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Brian Nickel";
+			};
+			buildConfigurationList = EB10E8C5192A6D1B00D519D8 /* Build configuration list for PBXProject "Bite" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = EB10E8C1192A6D1B00D519D8;
+			productRefGroup = EB10E8CB192A6D1B00D519D8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EB10E8C9192A6D1B00D519D8 /* Bite */,
+				EB10E8D9192A6D1B00D519D8 /* BiteTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EB10E8D8192A6D1B00D519D8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB10E8E8192A6D1B00D519D8 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EB10E8C6192A6D1B00D519D8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB10E8FF192A700F00D519D8 /* BITETuple.m in Sources */,
+				EB10E904192A700F00D519D8 /* BITEFilterEnumerator.m in Sources */,
+				EB10E900192A700F00D519D8 /* BITEEnumerator.m in Sources */,
+				EB10E902192A700F00D519D8 /* BITETakeEnumerator.m in Sources */,
+				EB10E903192A700F00D519D8 /* BITEMapEnumerator.m in Sources */,
+				EB10E901192A700F00D519D8 /* BITESkipEnumerator.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB10E8D6192A6D1B00D519D8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB10E8EA192A6D1B00D519D8 /* BiteTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EB10E8E1192A6D1B00D519D8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EB10E8C9192A6D1B00D519D8 /* Bite */;
+			targetProxy = EB10E8E0192A6D1B00D519D8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EB10E8E6192A6D1B00D519D8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EB10E8E7192A6D1B00D519D8 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EB10E8EB192A6D1B00D519D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		EB10E8EC192A6D1B00D519D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EB10E8EE192A6D1B00D519D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/Bite.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Bite/Bite-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		EB10E8EF192A6D1B00D519D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/Bite.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Bite/Bite-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		EB10E8F1192A6D1B00D519D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Bite/Bite-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "BiteTests/BiteTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		EB10E8F2192A6D1B00D519D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Bite/Bite-Prefix.pch";
+				INFOPLIST_FILE = "BiteTests/BiteTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EB10E8C5192A6D1B00D519D8 /* Build configuration list for PBXProject "Bite" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB10E8EB192A6D1B00D519D8 /* Debug */,
+				EB10E8EC192A6D1B00D519D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EB10E8ED192A6D1B00D519D8 /* Build configuration list for PBXNativeTarget "Bite" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB10E8EE192A6D1B00D519D8 /* Debug */,
+				EB10E8EF192A6D1B00D519D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		EB10E8F0192A6D1B00D519D8 /* Build configuration list for PBXNativeTarget "BiteTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB10E8F1192A6D1B00D519D8 /* Debug */,
+				EB10E8F2192A6D1B00D519D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EB10E8C2192A6D1B00D519D8 /* Project object */;
+}
