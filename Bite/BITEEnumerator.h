@@ -20,7 +20,12 @@
 
 - (BITEEnumerator *)take:(NSUInteger)count;
 - (BITEEnumerator *)skip:(NSUInteger)count;
+
 - (BITEEnumerator *)map:(id (^)(id obj))mappingFunction;
+- (BITEEnumerator *)mapWithExpression:(NSExpression *)expression;
+- (BITEEnumerator *)mapWithFormat:(NSString *)expressionFormat, ...;
+- (BITEEnumerator *)mapWithKeyPath:(NSString *)keyPath;
+
 - (BITEEnumerator *)filter:(BOOL (^)(id obj))test;
 - (BITEEnumerator *)filterWithPredicate:(NSPredicate *)predicate;
 - (BITEEnumerator *)filterWithFormat:(NSString *)predicateFormat, ...;

@@ -181,6 +181,27 @@
     return [[BITEMapEnumerator alloc] initWithEnumerator:self mappingFunction:mappingFunction];
 }
 
+- (BITEEnumerator *)mapWithExpression:(NSExpression *)expression
+{
+    return [self map:^id(id obj) {
+        return [expression expressionValueWithObject:obj context:nil];
+    }];
+}
+
+- (BITEEnumerator *)mapWithFormat:(NSString *)expressionFormat, ...
+{
+    va_list arguments;
+    va_start(arguments, expressionFormat);
+    NSExpression *expression = [NSExpression expressionWithFormat:expressionFormat arguments:arguments];
+    va_end(arguments);
+    return [self mapWithExpression:expression];
+}
+
+- (BITEEnumerator *)mapWithKeyPath:(NSString *)keyPath
+{
+    return [self mapWithExpression:[NSExpression expressionForKeyPath:keyPath]];
+}
+
 - (BITEEnumerator *)filter:(BOOL (^)(id))filter
 {
     return [[BITEFilterEnumerator alloc] initWithEnumerator:self filter:filter];

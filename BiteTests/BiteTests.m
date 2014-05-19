@@ -77,7 +77,7 @@
     XCTAssertEqualObjects(items, [primes.knownPrimes subarrayWithRange:NSMakeRange(15, 5)], @"Subarray should match.");
 }
 
-#pragma mark map:
+#pragma mark map*:
 
 - (void)testMap
 {
@@ -85,6 +85,34 @@
         return [[NSString alloc] initWithFormat:@"%@ is prime", obj];
     }] array];
     NSArray *expected = @[@"2 is prime", @"3 is prime"];
+    XCTAssertEqualObjects(expected, items, @"Should have been transformed and autoreleased.");
+}
+
+- (void)testMapWithExpression
+{
+    NSArray *items = [[[BITE(primes) take:3] mapWithExpression:[NSExpression expressionWithFormat:@"SELF ** 2"]] array];
+    NSArray *expected = @[@4, @9, @25];
+    XCTAssertEqualObjects(expected, items, @"Should have been transformed and autoreleased.");
+}
+
+- (void)testMapWithFormat
+{
+    NSArray *items = [[BITE(@[@"hello", @"world"]) mapWithFormat:@"uppercase:(SELF)"] array];
+    NSArray *expected = @[@"HELLO", @"WORLD"];
+    XCTAssertEqualObjects(expected, items, @"Should have been transformed and autoreleased.");
+}
+
+- (void)testMapWithFormatParameters
+{
+    NSArray *items = [[[BITE(primes) take:3] mapWithExpression:[NSExpression expressionWithFormat:@"SELF ** %@", @2]] array];
+    NSArray *expected = @[@4, @9, @25];
+    XCTAssertEqualObjects(expected, items, @"Should have been transformed and autoreleased.");
+}
+
+- (void)testMapWithKeyPath
+{
+    NSArray *items = [[BITE(@[@"hello", @"world"]) mapWithKeyPath:@"uppercaseString"] array];
+    NSArray *expected = @[@"HELLO", @"WORLD"];
     XCTAssertEqualObjects(expected, items, @"Should have been transformed and autoreleased.");
 }
 
