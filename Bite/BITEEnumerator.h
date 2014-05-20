@@ -10,7 +10,6 @@
 
 @interface BITEEnumerator : NSObject<NSFastEnumeration>
 
-
 @property (nonatomic, readonly) id<NSFastEnumeration>wrappedEnumerator;
 - (instancetype)initWithEnumerator:(id<NSFastEnumeration>)enumerator;
 - (instancetype)initWithEnumerator:(id<NSFastEnumeration>)enumerator choke:(NSUInteger)choke;
@@ -31,6 +30,9 @@
 - (BITEEnumerator *)filterWithFormat:(NSString *)predicateFormat, ...;
 - (BITEEnumerator *)choke:(NSUInteger)choke;
 - (BITEEnumerator *)except:(id)obj;
+
+- (BITEEnumerator *)groupBy:(id<NSCopying> (^)(id obj))func;
+- (BITEEnumerator *)groupByKeyPath:(NSString *)keyPath;
 
 #pragma mark Evaluation
 

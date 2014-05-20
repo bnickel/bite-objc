@@ -139,7 +139,7 @@
     XCTAssertEqualObjects(items, even, @"Should be even.");
 }
 
-#pragma mark - choke:
+#pragma mark choke:
 
 - (void)testChoke
 {
@@ -159,13 +159,28 @@
     XCTAssertEqual(5, primes.knownPrimes.count, @"Should have choked.");
 }
 
-#pragma mark - except:
+#pragma mark except:
 
 - (void)testExcept
 {
     NSArray *items = [[[[BITE(primes) except:@2] except:@5] take:2] array];
     XCTAssertEqualObjects(@3, items[0], @"Should have skipped 2.");
     XCTAssertEqualObjects(@7, items[1], @"Should have skipped 5.");
+}
+
+#pragma mark - groupBy*:
+
+- (void)testGroupBy
+{
+    NSDictionary *results = [[[BITE(numbers) groupBy:^id<NSCopying>(id obj) {
+        return [obj integerValue] % 2 == 0 ? @"even" : @"odd";
+    }] map:^id(BITEGrouping *group) {
+        return BITE_TUPLE([group key], [group array]);
+    }] dictionaryWithPairs];
+    
+    XCTAssertEqual(2, results.count, @"Should have two groups.");
+    XCTAssertEqualObjects([even copy], results[@"even"], @"Should have grouped evens.");
+    XCTAssertEqualObjects([odd copy], results[@"odd"], @"Should have grouped odds.");
 }
 
 #pragma mark - Evaluation

@@ -11,6 +11,7 @@
 #import "BITESkipEnumerator.h"
 #import "BITEMapEnumerator.h"
 #import "BITEFilterEnumerator.h"
+#import "BITEGrouping.h"
 
 @interface BITEEnumerator ()
 @property (nonatomic, readonly) NSMutableArray *wrappedStates;
@@ -232,6 +233,31 @@
 {
     return [self filter:^BOOL(id obj2) {
         return obj != obj2 && ![obj isEqual:obj2];
+    }];
+}
+
+- (BITEEnumerator *)groupBy:(id<NSCopying> (^)(id))func
+{
+    NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
+    for (id obj in self) {
+        id<NSCopying> key = func(obj);
+        NSMutableArray *array = dictionary[key] ?: ({
+            NSMutableArray *array = [NSMutableArray array];
+            dictionary[key] = array;
+            array;
+        });
+        [array addObject:obj];
+    }
+    
+    return [BITE(dictionary) map:^id(id<NSCopying> obj) {
+        return [[BITEGrouping alloc] initWithEnumerator:dictionary[obj] key:obj];
+    }];
+}
+
+- (BITEEnumerator *)groupByKeyPath:(NSString *)keyPath
+{
+    return [self groupBy:^id<NSCopying>(id obj) {
+        return [obj valueForKeyPath:keyPath];
     }];
 }
 
