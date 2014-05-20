@@ -51,7 +51,14 @@ extern uint64_t dispatch_benchmark(size_t count, void (^block)(void));
 
 - (void)runWithTrials:(size_t)trials
 {
-    NSDictionary *results = [[[[BITE([self preparedAndRandomizedTests]) map:^id(id test) {
+    [self runWithTrials:trials filter:nil];
+}
+
+- (void)runWithTrials:(size_t)trials filter:(BOOL(^)(NSString *test, NSString *data))filter
+{
+    NSDictionary *results = [[[[[BITE([self preparedAndRandomizedTests]) filter:^BOOL(id obj) {
+        return filter ? filter([obj _1], [obj _2]) : YES;
+    }] map:^id(id test) {
         return BITE_TUPLE([test _1], [test _2], @(dispatch_benchmark(trials, [test _3])));
     }] groupByKeyPath:@"_1"] map:^id(BITEGrouping *group) {
         return BITE_TUPLE([group key], [group dictionaryWithKeyPath:@"_2" valuePath:@"_3"]);
@@ -65,7 +72,7 @@ extern uint64_t dispatch_benchmark(size_t count, void (^block)(void));
     for (id data in self.data) {
         [output appendString:[data _1]];
         for (id test in self.tests) {
-            [output appendFormat:@", %@", results[[test _1]][[data _1]]];
+            [output appendFormat:@", %@", results[[test _1]][[data _1]] ?: @"skipped"];
         }
         [output appendString:@"\n"];
     }
@@ -91,7 +98,7 @@ extern uint64_t dispatch_benchmark(size_t count, void (^block)(void));
     // http://stackoverflow.com/a/10258341/860000
     
     for(NSUInteger i = [tests count]; i > 1; i--) {
-        NSUInteger j = arc4random_uniform(i);
+        NSUInteger j = arc4random_uniform((u_int32_t)i);
         [tests exchangeObjectAtIndex:i-1 withObjectAtIndex:j];
     }
     

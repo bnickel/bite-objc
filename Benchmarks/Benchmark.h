@@ -14,5 +14,6 @@
 - (void)addTestData:(id)data name:(NSString *)name;
 - (void)addTestWithName:(NSString *)name block:(void (^)(id data))block;
 - (void)runWithTrials:(size_t)trials;
+- (void)runWithTrials:(size_t)trials filter:(BOOL(^)(NSString *test, NSString *data))filter;
 
 @end

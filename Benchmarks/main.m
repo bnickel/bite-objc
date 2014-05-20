@@ -48,7 +48,9 @@ int main(int argc, char * argv[])
             }] array];
         }];
         
-        [benchmark runWithTrials:10];
+        [benchmark runWithTrials:500 filter:^BOOL(NSString *test, NSString *data) {
+            return YES;
+        }];
         
         return 0;
     }
