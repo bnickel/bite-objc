@@ -57,7 +57,7 @@ for (id obj in [bite2 take:5]) {
 
 ### Tuples
 
-`BITETuple` contains indexed properties `_1`, `_2`, `_3` which can be created with the overloaded `BITE_TUPLE` function.  Shorthand macros exist if you define `BITE_TUPLE` before importing bite:
+`BITETuple` contains indexed properties `_1`, `_2`, `_3` which can be created with the overloaded `BITE_TUPLE` function.  Shorthand macros exist if you define `BITE_SHORTHAND` before importing bite:
 
 ```objc
 id a = BITE_TUPLE(@1);
