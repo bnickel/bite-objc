@@ -1,5 +1,7 @@
 # bite-objc
 
+[![Build Status](https://travis-ci.org/bnickel/bite-objc.svg?branch=master)](https://travis-ci.org/bnickel/bite-objc)
+
 Bite is a functional enumeration library built on top of `NSFastEnumeration`, providing functions like `take:`, `filter:`, and `map:`. While many Foundation collections already provide similar operations, Bite lets you do them without introducing large or mutable intermediates.
 
 Concept based on the [Bite Java library](https://bitbucket.org/balpha/bite/wiki/Home).
