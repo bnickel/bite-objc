@@ -1,3 +1,4 @@
 language: objective-c
 xcode_project: Bite.xcodeproj
 xcode_scheme: Bite
+xcode_sdk: iphonesimulator
