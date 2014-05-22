@@ -4,3 +4,4 @@ before_script:
     - brew upgrade xctool
 script:
     - xctool -project Bite.xcodeproj -sdk iphonesimulator -scheme Bite test
+    - xctool -project Bite.xcodeproj -scheme Bite-osx test

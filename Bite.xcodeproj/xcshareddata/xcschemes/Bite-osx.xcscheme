@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "EB10E90D192AD2D700D519D8"
-               BuildableName = "Benchmarks.app"
-               BlueprintName = "Benchmarks"
+               BlueprintIdentifier = "EB10E94E192DB77200D519D8"
+               BuildableName = "Bite-osx.dylib"
+               BlueprintName = "Bite-osx"
                ReferencedContainer = "container:Bite.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -39,15 +39,6 @@
             </BuildableReference>
          </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "EB10E90D192AD2D700D519D8"
-            BuildableName = "Benchmarks.app"
-            BlueprintName = "Benchmarks"
-            ReferencedContainer = "container:Bite.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </TestAction>
    <LaunchAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
@@ -58,15 +49,6 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "EB10E90D192AD2D700D519D8"
-            BuildableName = "Benchmarks.app"
-            BlueprintName = "Benchmarks"
-            ReferencedContainer = "container:Bite.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -76,15 +58,6 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "EB10E90D192AD2D700D519D8"
-            BuildableName = "Benchmarks.app"
-            BlueprintName = "Benchmarks"
-            ReferencedContainer = "container:Bite.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
