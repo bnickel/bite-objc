@@ -5,8 +5,9 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/bnickel/bite-objc"
   s.license      = { :type => "MIT", :file => "LICENSE.md" }
   s.author       = { "Brian Nickel" => "brian.nickel@gmail.com" }
-  s.platform     = :ios, "5.0"
   s.source       = { :git => "https://github.com/bnickel/bite-objc.git", :tag => "#{s.version}" }
   s.source_files = "Bite"
   s.requires_arc = true
+  s.ios.deployment_target = '5.0'
+  s.osx.deployment_target = '10.7'
 end
