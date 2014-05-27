@@ -2,8 +2,7 @@
 
 [![Build Status](https://travis-ci.org/bnickel/bite-objc.svg?branch=master)](https://travis-ci.org/bnickel/bite-objc)
 [
-![](https://cocoapod-badges.herokuapp.com/v/Bite/badge.png)
-![](https://cocoapod-badges.herokuapp.com/p/Bite/badge.png)
+![](https://cocoapod-badges.herokuapp.com/v/Bite/badge.png)&nbsp;![](https://cocoapod-badges.herokuapp.com/p/Bite/badge.png)
 ](http://cocoapods.org/?q=name%3Abite Available on cocoapods)
 
 Bite is a functional enumeration library built on top of `NSFastEnumeration`, providing functions like `take:`, `filter:`, and `map:`. While many Foundation collections already provide similar operations, Bite lets you do them without introducing large or mutable intermediates.
