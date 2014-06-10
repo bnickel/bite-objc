@@ -191,6 +191,12 @@
     XCTAssertEqual(primes.knownPrimes.count, 1, @"Should not have iterated.");
 }
 
+- (void)testCount
+{
+    BITEEnumerator *evenEnum = [BITE(numbers) filterWithFormat:@"modulus:by:(SELF,2) == 0"];
+    XCTAssertEqual(even.count, evenEnum.count, @"Should be the same.");
+}
+
 - (void)testSet
 {
     NSSet *numbersSet = [BITE([even arrayByAddingObjectsFromArray:numbers]) set];
@@ -219,6 +225,12 @@
     XCTAssertEqualObjects(largePrime, primes.knownPrimes.lastObject, @"Enumeration should have stopped at when found.");
 }
 
+- (void)testAnyWithPredicate
+{
+    BOOL thereAreBigPrimes =  [BITE(primes) anyMatchFormat:@"self > %@", @1000];
+    XCTAssertTrue(thereAreBigPrimes, @"There should be big primes.");
+}
+
 - (void)testThatAllStopsAtTheFirstFailure
 {
     BOOL thereAreNoPrimesGreaterThan99 = [BITE(primes) all:^BOOL(id obj) {
@@ -226,6 +238,12 @@
     }];
     XCTAssertFalse(thereAreNoPrimesGreaterThan99, @"What about 101");
     XCTAssertEqualObjects(@101, primes.knownPrimes.lastObject, @"Enumeration should have stopped at when found.");
+}
+
+- (void)testAllWithPredicate
+{
+    BOOL thereAreNoBigPrimes =  [BITE(primes) allMatchFormat:@"self < %@", @1000];
+    XCTAssertFalse(thereAreNoBigPrimes, @"There should be big primes.");
 }
 
 - (void)testThatFirstStopsAtFirstMatch

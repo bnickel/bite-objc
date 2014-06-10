@@ -82,6 +82,15 @@
     return takenCount;
 }
 
+- (NSUInteger)count
+{
+    NSUInteger count = 0;
+    for (__unused id obj in self) {
+        count += 1;
+    }
+    return count;
+}
+
 - (NSArray *)array
 {
     NSMutableArray *array = [[NSMutableArray alloc] init];
@@ -141,6 +150,22 @@
     return NO;
 }
 
+- (BOOL)anyMatchPredicate:(NSPredicate *)predicate
+{
+    return [self any:^BOOL(id obj) {
+        return [predicate evaluateWithObject:obj];
+    }];
+}
+
+- (BOOL)anyMatchFormat:(NSString *)predicateFormat, ...
+{
+    va_list arguments;
+    va_start(arguments, predicateFormat);
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:predicateFormat arguments:arguments];
+    va_end(arguments);
+    return [self anyMatchPredicate:predicate];
+}
+
 - (BOOL)all:(BOOL (^)(id))test
 {
     NSParameterAssert(test);
@@ -150,6 +175,22 @@
         }
     }
     return YES;
+}
+
+- (BOOL)allMatchPredicate:(NSPredicate *)predicate
+{
+    return [self all:^BOOL(id obj) {
+        return [predicate evaluateWithObject:obj];
+    }];
+}
+
+- (BOOL)allMatchFormat:(NSString *)predicateFormat, ...
+{
+    va_list arguments;
+    va_start(arguments, predicateFormat);
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:predicateFormat arguments:arguments];
+    va_end(arguments);
+    return [self allMatchPredicate:predicate];
 }
 
 - (id)first:(out BOOL *)exists

@@ -36,13 +36,18 @@
 
 #pragma mark Evaluation
 
+- (NSUInteger)count;
 - (NSArray *)array;
 - (NSSet *)set;
 - (NSDictionary *)dictionaryWithKeyPath:(NSString *)keyPath valuePath:(NSString *)valuePath;
 - (NSDictionary *)dictionaryWithPairs;
 - (NSString *)joinedByString:(NSString *)separator;
 - (BOOL)any:(BOOL (^)(id obj))test;
+- (BOOL)anyMatchPredicate:(NSPredicate *)predicate;
+- (BOOL)anyMatchFormat:(NSString *)predicateFormat, ...;
 - (BOOL)all:(BOOL (^)(id obj))test;
+- (BOOL)allMatchPredicate:(NSPredicate *)predicate;
+- (BOOL)allMatchFormat:(NSString *)predicateFormat, ...;
 - (id)first:(out BOOL *)exists;
 
 @end
