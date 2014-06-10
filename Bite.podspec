@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Bite"
-  s.version      = "0.1.0"
+  s.version      = "0.2.0"
   s.summary      = "Functional operations for NSFastEnumeration."
   s.homepage     = "https://github.com/bnickel/bite-objc"
   s.license      = { :type => "MIT", :file => "LICENSE.md" }

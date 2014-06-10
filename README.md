@@ -14,7 +14,7 @@ Concept based on the [Bite Java library](https://bitbucket.org/balpha/bite/wiki/
 ### Installation
 
 ```ruby
-pod 'Bite', '~> 0.1'
+pod 'Bite', '~> 0.2'
 ```
 
 ```objc
@@ -48,27 +48,37 @@ for (id obj in [bite2 take:5]) {
 - `- (BITEEnumerator *)take:(NSUInteger)count` Stops iterating after `count` elements are iterated.
 - `- (BITEEnumerator *)skip:(NSUInteger)count` Skips over `count` elements.
 
-- `- (BITEEnumerator *)map:(id (^)(id obj))mappingFunction` Passes each element through a mapping function and iterates the results.
-- `- (BITEEnumerator *)mapWithExpression:(NSExpression *)expression` Same as `map:` but with an expression.
-- `- (BITEEnumerator *)mapWithFormat:(NSString *)expressionFormat, ...` Same as `map:` but constructs an expression.
+- `- (BITEEnumerator *)map:(id (^)(id obj))mappingFunction` **Has NSExpression versions.** Passes each element through a mapping function and iterates the results.
 - `- (BITEEnumerator *)mapWithKeyPath:(NSString *)keyPath` Same as `map:` but selects a key path from each element.
 
-- `- (BITEEnumerator *)filter:(BOOL (^)(id obj))test` Only iterates elements that pass a test.  Useful for `nil` filtering before generating a collection.
-- `- (BITEEnumerator *)filterWithPredicate:(NSPredicate *)predicate` Same as `filter:` but with a predicate.
-- `- (BITEEnumerator *)filterWithFormat:(NSString *)predicateFormat, ...` Same as `filter:` but constructs a predicate.
+- `- (BITEEnumerator *)filter:(BOOL (^)(id obj))test` **Has NSPredicate versions.** Only iterates elements that pass a test.  Useful for `nil` filtering before generating a collection.
 - `- (BITEEnumerator *)choke:(NSUInteger)choke` Decreases the number of elements that are loaded into the fast-enumeration buffer.
 - `- (BITEEnumerator *)except:(id)obj` Filters out elements that are equal to the given object.
+- `- (BITEEnumerator *)until:(BOOL (^)(id obj))test` **Has NSPredicate versions.** Stops iterating when the test passes.
+- `- (BITEEnumerator *)and:(id<NSFastEnumeration>)enumerator` Concatenates this enumerator with another.
+- `- (BITEEnumerator *)andObject:(id)obj` Concatenates this enumerator with a single element.
+
 
 ### Evaluating/Collecting
 
+- `- (NSUInteger)count` Returns the number of elements in the enumerator.
 - `- (NSArray *)array` Creates an array.
 - `- (NSSet *)set` Creates a set.
 - `- (NSDictionary *)dictionaryWithKeyPath:(NSString *)keyPath valuePath:(NSString *)valuePath` Creates a dictionary using key paths for the keys and values.
 - `- (NSDictionary *)dictionaryWithPairs` Creates a dictionary using the path `_1` for the key and `_2` for the value.  To be used with `PAIR/BITE_TUPLE`.
 - `- (NSString *)joinedByString:(NSString *)separator` Joins the elements in the enumerator with a separator.
-- `- (BOOL)any:(BOOL (^)(id obj))test` Returns `YES` if any item in the enumerator passes the test and stops iterating.  It chokes the buffer to one element to limit execution.
-- `- (BOOL)all:(BOOL (^)(id obj))test` Returns `YES` if all items in the enumerator pass the test.  Returns `NO` and stops iterating as soon as the test fails.  It chokes the buffer to one element to limit execution.
+
+- `- (BOOL)any:(BOOL (^)(id obj))test` **Has NSPredicate versions.** Returns `YES` if any item in the enumerator passes the test and stops iterating.  It chokes the buffer to one element to limit execution.
+- `- (BOOL)all:(BOOL (^)(id obj))test` **Has NSPredicate versions.** Returns `YES` if all items in the enumerator pass the test.  Returns `NO` and stops iterating as soon as the test fails.  It chokes the buffer to one element to limit execution.
+
 - `- (id)first:(out BOOL *)exists` Returns the first item or `nil` if the enumerator is empty.  Optionally outputs whether or not an item was returned to `exists` in cases where `nil` is a valid enumerated item.
+- `- (id)last:(out BOOL *)exists` Returns the last item or `nil` if the enumerator is empty.  Optionally outputs whether or not an item was returned to `exists` in cases where `nil` is a valid enumerated item.
+
+- `- (id)foldLeft:(id)initial func:(id (^)(id acc, id obj))func` Folds left with an initial accumulator value.
+- `- (id)foldRight:(id)initial func:(id (^)(id obj, id acc))func` Folds right with an initial accumulator value.
+
+- `- (id)reduceLeft:(id (^)(id acc, id obj))func` Reduces left.
+- `- (id)reduceRight:(id (^)(id obj, id acc))func` Reduces right.
 
 ### Tuples
 
