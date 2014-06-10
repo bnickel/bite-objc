@@ -14,6 +14,7 @@
 - (instancetype)initWithEnumerator:(id<NSFastEnumeration>)enumerator;
 - (instancetype)initWithEnumerator:(id<NSFastEnumeration>)enumerator choke:(NSUInteger)choke;
 - (NSFastEnumerationState *)wrappedStateForState:(NSFastEnumerationState *)state;
+- (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state objects:(__unsafe_unretained id [])buffer count:(NSUInteger)len;
 
 #pragma mark Transforms
 
@@ -58,6 +59,9 @@
 - (BOOL)allMatchFormat:(NSString *)predicateFormat, ...;
 - (id)first:(out BOOL *)exists;
 - (id)last:(out BOOL *)exists;
+
+- (id)foldLeft:(id)initial func:(id (^)(id acc, id obj))func;
+- (id)foldRight:(id)initial func:(id (^)(id obj, id acc))func;
 
 @end
 

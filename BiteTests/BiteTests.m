@@ -299,4 +299,35 @@
     XCTAssertNil(firstPrimeGreaterThan1000, @"It should be nil.");
 }
 
+- (void)testFoldLeft
+{
+    id sum = [[BITE(primes) take:100] foldLeft:@0 func:^id(id acc, id obj) {
+        return @([acc integerValue] + [obj integerValue]);
+    }];
+    XCTAssertEqualObjects(@24133, sum, @"Should have summed first 100 primes.");
+    
+    NSArray *words = @[@"space", @"ant", @"cart", @"squash", @"bug", @"time"];
+    
+    id shortestWord = [BITE(words) foldLeft:@"------------" func:^id(id acc, id obj) {
+        return [obj length] < [acc length] ? obj : acc;
+    }];
+    XCTAssertEqualObjects(shortestWord, @"ant", @"Should have got first word from the left.");
+}
+
+- (void)testFoldRight
+{
+    id sum = [[BITE(primes) take:100] foldRight:@0 func:^id(id obj, id acc) {
+        return @([acc integerValue] + [obj integerValue]);
+    }];
+    XCTAssertEqualObjects(@24133, sum, @"Should have summed first 100 primes.");
+    
+    NSArray *words = @[@"space", @"ant", @"cart", @"squash", @"bug", @"time"];
+    
+    id shortestWord = [BITE(words) foldRight:@"------------" func:^id(id obj, id acc) {
+        NSLog(@"%@ %@", obj, acc);
+        return [obj length] < [acc length] ? obj : acc;
+    }];
+    XCTAssertEqualObjects(shortestWord, @"bug", @"Should have got first word from the left.");
+}
+
 @end

@@ -226,6 +226,22 @@
     return lastObject;
 }
 
+- (id)foldLeft:(id)initial func:(id (^)(id, id))func
+{
+    id accumulator = initial;
+    for (id obj in self) {
+        accumulator = func(accumulator, obj);
+    }
+    return accumulator;
+}
+
+- (id)foldRight:(id)initial func:(id (^)(id, id))func
+{
+    return [BITE(self.array.reverseObjectEnumerator) foldLeft:initial func:^id(id acc, id obj) {
+        return func(obj, acc);
+    }];
+}
+
 - (BITEEnumerator *)take:(NSUInteger)count
 {
     return [[BITETakeEnumerator alloc] initWithEnumerator:self count:count];
