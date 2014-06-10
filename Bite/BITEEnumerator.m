@@ -12,6 +12,7 @@
 #import "BITEMapEnumerator.h"
 #import "BITEFilterEnumerator.h"
 #import "BITEUntilEnumerator.h"
+#import "BITEAndEnumerator.h"
 #import "BITEGrouping.h"
 
 @interface BITEEnumerator ()
@@ -292,6 +293,16 @@
     return [self filter:^BOOL(id obj2) {
         return obj != obj2 && ![obj isEqual:obj2];
     }];
+}
+
+- (BITEEnumerator *)and:(id<NSFastEnumeration>)enumerator
+{
+    return [[BITEAndEnumerator alloc] initWithFirstEnumerator:self secondEnumerator:enumerator];
+}
+
+- (BITEEnumerator *)andObject:(id)obj
+{
+    return [self and:@[obj]];
 }
 
 - (BITEEnumerator *)until:(BOOL (^)(id))test

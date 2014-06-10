@@ -52,6 +52,9 @@
 		EB7335E519476922002E09F9 /* BITEUntilEnumerator.h in Headers */ = {isa = PBXBuildFile; fileRef = EB7335E319476922002E09F9 /* BITEUntilEnumerator.h */; };
 		EB7335E619476922002E09F9 /* BITEUntilEnumerator.m in Sources */ = {isa = PBXBuildFile; fileRef = EB7335E419476922002E09F9 /* BITEUntilEnumerator.m */; };
 		EB7335E719476922002E09F9 /* BITEUntilEnumerator.m in Sources */ = {isa = PBXBuildFile; fileRef = EB7335E419476922002E09F9 /* BITEUntilEnumerator.m */; };
+		EB7335EA19476E32002E09F9 /* BITEAndEnumerator.h in Headers */ = {isa = PBXBuildFile; fileRef = EB7335E819476E32002E09F9 /* BITEAndEnumerator.h */; };
+		EB7335EB19476E32002E09F9 /* BITEAndEnumerator.m in Sources */ = {isa = PBXBuildFile; fileRef = EB7335E919476E32002E09F9 /* BITEAndEnumerator.m */; };
+		EB7335EC19476E32002E09F9 /* BITEAndEnumerator.m in Sources */ = {isa = PBXBuildFile; fileRef = EB7335E919476E32002E09F9 /* BITEAndEnumerator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +133,8 @@
 		EB10E960192DB77200D519D8 /* Bite-osxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bite-osxTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB7335E319476922002E09F9 /* BITEUntilEnumerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BITEUntilEnumerator.h; sourceTree = "<group>"; };
 		EB7335E419476922002E09F9 /* BITEUntilEnumerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BITEUntilEnumerator.m; sourceTree = "<group>"; };
+		EB7335E819476E32002E09F9 /* BITEAndEnumerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BITEAndEnumerator.h; sourceTree = "<group>"; };
+		EB7335E919476E32002E09F9 /* BITEAndEnumerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BITEAndEnumerator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,6 +241,8 @@
 				EB10E8FE192A700F00D519D8 /* BITEFilterEnumerator.m */,
 				EB7335E319476922002E09F9 /* BITEUntilEnumerator.h */,
 				EB7335E419476922002E09F9 /* BITEUntilEnumerator.m */,
+				EB7335E819476E32002E09F9 /* BITEAndEnumerator.h */,
+				EB7335E919476E32002E09F9 /* BITEAndEnumerator.m */,
 				EB10E8D0192A6D1B00D519D8 /* Supporting Files */,
 			);
 			path = Bite;
@@ -312,6 +319,7 @@
 				EB10E978192DB7FE00D519D8 /* BITETuple.h in Headers */,
 				EB10E977192DB7F900D519D8 /* Bite.h in Headers */,
 				EB10E976192DB7F400D519D8 /* BITEEnumerator.h in Headers */,
+				EB7335EA19476E32002E09F9 /* BITEAndEnumerator.h in Headers */,
 				EB10E979192DB80B00D519D8 /* BITEGrouping.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -481,6 +489,7 @@
 				EB10E904192A700F00D519D8 /* BITEFilterEnumerator.m in Sources */,
 				EB7335E619476922002E09F9 /* BITEUntilEnumerator.m in Sources */,
 				EB10E900192A700F00D519D8 /* BITEEnumerator.m in Sources */,
+				EB7335EB19476E32002E09F9 /* BITEAndEnumerator.m in Sources */,
 				EB10E93F192BCF2200D519D8 /* BITEGrouping.m in Sources */,
 				EB10E902192A700F00D519D8 /* BITETakeEnumerator.m in Sources */,
 				EB10E903192A700F00D519D8 /* BITEMapEnumerator.m in Sources */,
@@ -514,6 +523,7 @@
 				EB10E97B192DB81400D519D8 /* BITESkipEnumerator.m in Sources */,
 				EB7335E719476922002E09F9 /* BITEUntilEnumerator.m in Sources */,
 				EB10E97D192DB81B00D519D8 /* BITEMapEnumerator.m in Sources */,
+				EB7335EC19476E32002E09F9 /* BITEAndEnumerator.m in Sources */,
 				EB10E974192DB7E100D519D8 /* BITETuple.m in Sources */,
 				EB10E975192DB7ED00D519D8 /* BITEEnumerator.m in Sources */,
 				EB10E97A192DB81000D519D8 /* BITEGrouping.m in Sources */,

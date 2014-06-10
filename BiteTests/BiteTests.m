@@ -176,7 +176,27 @@
     XCTAssertEqualObjects(@7, items[1], @"Should have skipped 5.");
 }
 
-#pragma mark - groupBy*:
+#pragma mark and:
+
+- (void)testAnd
+{
+    NSSet *allNumbers = [[BITE(even) and:odd] set];
+    XCTAssertEqualObjects(allNumbers, [NSSet setWithArray:numbers], "Should have combined sets.");
+    
+    NSArray *allNumbersNarrow = [[[[BITE(even, 1) and:BITE(odd, 1)] and:BITE(odd, 1)] and:BITE(even, 1)] array];
+    NSArray *allNumbersByArray = [[[even arrayByAddingObjectsFromArray:odd] arrayByAddingObjectsFromArray:odd] arrayByAddingObjectsFromArray:even];
+    XCTAssertEqualObjects(allNumbersNarrow, allNumbersByArray, "Should have combined arrays.");
+}
+
+- (void)testAndObject
+{
+    NSArray *items = [[BITE(@[@1,@2,@3,@4]) andObject:@5] array];
+    NSArray *oneToFive = @[@1,@2,@3,@4,@5];
+    XCTAssertEqualObjects(items, oneToFive, @"Should have appended.");
+}
+
+
+#pragma mark groupBy*:
 
 - (void)testGroupBy
 {

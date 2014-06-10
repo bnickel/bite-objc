@@ -28,8 +28,10 @@
 - (BITEEnumerator *)filter:(BOOL (^)(id obj))test;
 - (BITEEnumerator *)filterWithPredicate:(NSPredicate *)predicate;
 - (BITEEnumerator *)filterWithFormat:(NSString *)predicateFormat, ...;
-- (BITEEnumerator *)choke:(NSUInteger)choke;
 - (BITEEnumerator *)except:(id)obj;
+
+- (BITEEnumerator *)and:(id<NSFastEnumeration>)enumerator;
+- (BITEEnumerator *)andObject:(id)obj;
 
 - (BITEEnumerator *)until:(BOOL (^)(id obj))test;
 - (BITEEnumerator *)untilWithPredicate:(NSPredicate *)predicate;
@@ -37,6 +39,8 @@
 
 - (BITEEnumerator *)groupBy:(id<NSCopying> (^)(id obj))func;
 - (BITEEnumerator *)groupByKeyPath:(NSString *)keyPath;
+
+- (BITEEnumerator *)choke:(NSUInteger)choke;
 
 #pragma mark Evaluation
 
