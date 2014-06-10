@@ -242,6 +242,28 @@
     }];
 }
 
+- (id)reduceLeft:(id (^)(id, id))func
+{
+    BOOL first = true;
+    id accumulator = nil;
+    for (id obj in self) {
+        if (first) {
+            first = NO;
+            accumulator = obj;
+        } else {
+            accumulator = func(accumulator, obj);
+        }
+    }
+    return accumulator;
+}
+
+- (id)reduceRight:(id (^)(id, id))func
+{
+    return [BITE(self.array.reverseObjectEnumerator) reduceLeft:^id(id acc, id obj) {
+        return func(obj, acc);
+    }];
+}
+
 - (BITEEnumerator *)take:(NSUInteger)count
 {
     return [[BITETakeEnumerator alloc] initWithEnumerator:self count:count];

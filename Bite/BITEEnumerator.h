@@ -51,17 +51,23 @@
 - (NSDictionary *)dictionaryWithKeyPath:(NSString *)keyPath valuePath:(NSString *)valuePath;
 - (NSDictionary *)dictionaryWithPairs;
 - (NSString *)joinedByString:(NSString *)separator;
+
 - (BOOL)any:(BOOL (^)(id obj))test;
 - (BOOL)anyMatchPredicate:(NSPredicate *)predicate;
 - (BOOL)anyMatchFormat:(NSString *)predicateFormat, ...;
+
 - (BOOL)all:(BOOL (^)(id obj))test;
 - (BOOL)allMatchPredicate:(NSPredicate *)predicate;
 - (BOOL)allMatchFormat:(NSString *)predicateFormat, ...;
+
 - (id)first:(out BOOL *)exists;
 - (id)last:(out BOOL *)exists;
 
 - (id)foldLeft:(id)initial func:(id (^)(id acc, id obj))func;
 - (id)foldRight:(id)initial func:(id (^)(id obj, id acc))func;
+
+- (id)reduceLeft:(id (^)(id acc, id obj))func;
+- (id)reduceRight:(id (^)(id obj, id acc))func;
 
 @end
 

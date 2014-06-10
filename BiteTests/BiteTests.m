@@ -301,10 +301,10 @@
 
 - (void)testFoldLeft
 {
-    id sum = [[BITE(primes) take:100] foldLeft:@0 func:^id(id acc, id obj) {
+    id sumPlus10 = [[BITE(primes) take:100] foldLeft:@10 func:^id(id acc, id obj) {
         return @([acc integerValue] + [obj integerValue]);
     }];
-    XCTAssertEqualObjects(@24133, sum, @"Should have summed first 100 primes.");
+    XCTAssertEqualObjects(@(24133+10), sumPlus10, @"Should have summed first 100 primes + 10.");
     
     NSArray *words = @[@"space", @"ant", @"cart", @"squash", @"bug", @"time"];
     
@@ -316,15 +316,44 @@
 
 - (void)testFoldRight
 {
-    id sum = [[BITE(primes) take:100] foldRight:@0 func:^id(id obj, id acc) {
+    id sumPlus10 = [[BITE(primes) take:100] foldRight:@10 func:^id(id obj, id acc) {
+        return @([acc integerValue] + [obj integerValue]);
+    }];
+    XCTAssertEqualObjects(@(24133+10), sumPlus10, @"Should have summed first 100 primes + 10.");
+    
+    NSArray *words = @[@"space", @"ant", @"cart", @"squash", @"bug", @"time"];
+    
+    id shortestWord = [BITE(words) foldRight:@"------------" func:^id(id obj, id acc) {
+        return [obj length] < [acc length] ? obj : acc;
+    }];
+    XCTAssertEqualObjects(shortestWord, @"bug", @"Should have got first word from the left.");
+}
+
+- (void)testReduceLeft
+{
+    id sum = [[BITE(primes) take:100] reduceLeft:^id(id acc, id obj) {
         return @([acc integerValue] + [obj integerValue]);
     }];
     XCTAssertEqualObjects(@24133, sum, @"Should have summed first 100 primes.");
     
     NSArray *words = @[@"space", @"ant", @"cart", @"squash", @"bug", @"time"];
     
-    id shortestWord = [BITE(words) foldRight:@"------------" func:^id(id obj, id acc) {
-        NSLog(@"%@ %@", obj, acc);
+    id shortestWord = [BITE(words) reduceLeft:^id(id acc, id obj) {
+        return [obj length] < [acc length] ? obj : acc;
+    }];
+    XCTAssertEqualObjects(shortestWord, @"ant", @"Should have got first word from the left.");
+}
+
+- (void)testReduceRight
+{
+    id sum = [[BITE(primes) take:100] reduceRight:^id(id obj, id acc) {
+        return @([acc integerValue] + [obj integerValue]);
+    }];
+    XCTAssertEqualObjects(@24133, sum, @"Should have summed first 100 primes.");
+    
+    NSArray *words = @[@"space", @"ant", @"cart", @"squash", @"bug", @"time"];
+    
+    id shortestWord = [BITE(words) reduceRight:^id(id obj, id acc) {
         return [obj length] < [acc length] ? obj : acc;
     }];
     XCTAssertEqualObjects(shortestWord, @"bug", @"Should have got first word from the left.");
