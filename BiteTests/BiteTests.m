@@ -139,6 +139,14 @@
     XCTAssertEqualObjects(items, even, @"Should be even.");
 }
 
+#pragma mark until*:
+
+- (void)testUntil
+{
+    NSInteger lastPrimeLessThan100 = [[[BITE(primes) untilWithFormat:@"SELF > %@", @100] last:NULL] integerValue];
+    XCTAssertEqual(lastPrimeLessThan100, 97, @"Should have stopped at 97.");
+}
+
 #pragma mark choke:
 
 - (void)testChoke

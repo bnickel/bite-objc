@@ -11,6 +11,7 @@
 #import "BITESkipEnumerator.h"
 #import "BITEMapEnumerator.h"
 #import "BITEFilterEnumerator.h"
+#import "BITEUntilEnumerator.h"
 #import "BITEGrouping.h"
 
 @interface BITEEnumerator ()
@@ -208,6 +209,22 @@
     return nil;
 }
 
+- (id)last:(out BOOL *)exists
+{
+    BOOL internalExists = NO;
+    id lastObject = nil;
+    for (id obj in self) {
+        internalExists = YES;
+        lastObject = obj;
+    }
+    
+    if (exists) {
+        *exists = internalExists;
+    }
+    
+    return lastObject;
+}
+
 - (BITEEnumerator *)take:(NSUInteger)count
 {
     return [[BITETakeEnumerator alloc] initWithEnumerator:self count:count];
@@ -275,6 +292,27 @@
     return [self filter:^BOOL(id obj2) {
         return obj != obj2 && ![obj isEqual:obj2];
     }];
+}
+
+- (BITEEnumerator *)until:(BOOL (^)(id))test
+{
+    return [[BITEUntilEnumerator alloc] initWithEnumerator:self test:test];
+}
+
+- (BITEEnumerator *)untilWithPredicate:(NSPredicate *)predicate
+{
+    return [self until:^BOOL(id obj) {
+        return [predicate evaluateWithObject:obj];
+    }];
+}
+
+- (BITEEnumerator *)untilWithFormat:(NSString *)predicateFormat, ...
+{
+    va_list arguments;
+    va_start(arguments, predicateFormat);
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:predicateFormat arguments:arguments];
+    va_end(arguments);
+    return [self untilWithPredicate:predicate];
 }
 
 - (BITEEnumerator *)groupBy:(id<NSCopying> (^)(id))func

@@ -31,6 +31,10 @@
 - (BITEEnumerator *)choke:(NSUInteger)choke;
 - (BITEEnumerator *)except:(id)obj;
 
+- (BITEEnumerator *)until:(BOOL (^)(id obj))test;
+- (BITEEnumerator *)untilWithPredicate:(NSPredicate *)predicate;
+- (BITEEnumerator *)untilWithFormat:(NSString *)predicateFormat, ...;
+
 - (BITEEnumerator *)groupBy:(id<NSCopying> (^)(id obj))func;
 - (BITEEnumerator *)groupByKeyPath:(NSString *)keyPath;
 
@@ -49,6 +53,7 @@
 - (BOOL)allMatchPredicate:(NSPredicate *)predicate;
 - (BOOL)allMatchFormat:(NSString *)predicateFormat, ...;
 - (id)first:(out BOOL *)exists;
+- (id)last:(out BOOL *)exists;
 
 @end
 

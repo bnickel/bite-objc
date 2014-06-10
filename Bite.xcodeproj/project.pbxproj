@@ -49,6 +49,9 @@
 		EB10E97F192DB82F00D519D8 /* BiteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB10E8E9192A6D1B00D519D8 /* BiteTests.m */; };
 		EB10E980192DB83A00D519D8 /* PrimeEnumerator.m in Sources */ = {isa = PBXBuildFile; fileRef = EB10E908192A745F00D519D8 /* PrimeEnumerator.m */; };
 		EB10E981192DB84300D519D8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EB10E8E6192A6D1B00D519D8 /* InfoPlist.strings */; };
+		EB7335E519476922002E09F9 /* BITEUntilEnumerator.h in Headers */ = {isa = PBXBuildFile; fileRef = EB7335E319476922002E09F9 /* BITEUntilEnumerator.h */; };
+		EB7335E619476922002E09F9 /* BITEUntilEnumerator.m in Sources */ = {isa = PBXBuildFile; fileRef = EB7335E419476922002E09F9 /* BITEUntilEnumerator.m */; };
+		EB7335E719476922002E09F9 /* BITEUntilEnumerator.m in Sources */ = {isa = PBXBuildFile; fileRef = EB7335E419476922002E09F9 /* BITEUntilEnumerator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +128,8 @@
 		EB10E954192DB77200D519D8 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		EB10E955192DB77200D519D8 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		EB10E960192DB77200D519D8 /* Bite-osxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bite-osxTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB7335E319476922002E09F9 /* BITEUntilEnumerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BITEUntilEnumerator.h; sourceTree = "<group>"; };
+		EB7335E419476922002E09F9 /* BITEUntilEnumerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BITEUntilEnumerator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +234,8 @@
 				EB10E8FC192A700F00D519D8 /* BITEMapEnumerator.m */,
 				EB10E8FD192A700F00D519D8 /* BITEFilterEnumerator.h */,
 				EB10E8FE192A700F00D519D8 /* BITEFilterEnumerator.m */,
+				EB7335E319476922002E09F9 /* BITEUntilEnumerator.h */,
+				EB7335E419476922002E09F9 /* BITEUntilEnumerator.m */,
 				EB10E8D0192A6D1B00D519D8 /* Supporting Files */,
 			);
 			path = Bite;
@@ -301,6 +308,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB7335E519476922002E09F9 /* BITEUntilEnumerator.h in Headers */,
 				EB10E978192DB7FE00D519D8 /* BITETuple.h in Headers */,
 				EB10E977192DB7F900D519D8 /* Bite.h in Headers */,
 				EB10E976192DB7F400D519D8 /* BITEEnumerator.h in Headers */,
@@ -471,6 +479,7 @@
 			files = (
 				EB10E8FF192A700F00D519D8 /* BITETuple.m in Sources */,
 				EB10E904192A700F00D519D8 /* BITEFilterEnumerator.m in Sources */,
+				EB7335E619476922002E09F9 /* BITEUntilEnumerator.m in Sources */,
 				EB10E900192A700F00D519D8 /* BITEEnumerator.m in Sources */,
 				EB10E93F192BCF2200D519D8 /* BITEGrouping.m in Sources */,
 				EB10E902192A700F00D519D8 /* BITETakeEnumerator.m in Sources */,
@@ -503,6 +512,7 @@
 			files = (
 				EB10E97C192DB81700D519D8 /* BITETakeEnumerator.m in Sources */,
 				EB10E97B192DB81400D519D8 /* BITESkipEnumerator.m in Sources */,
+				EB7335E719476922002E09F9 /* BITEUntilEnumerator.m in Sources */,
 				EB10E97D192DB81B00D519D8 /* BITEMapEnumerator.m in Sources */,
 				EB10E974192DB7E100D519D8 /* BITETuple.m in Sources */,
 				EB10E975192DB7ED00D519D8 /* BITEEnumerator.m in Sources */,
@@ -853,6 +863,7 @@
 				EB10E970192DB77300D519D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EB10E971192DB77300D519D8 /* Build configuration list for PBXNativeTarget "Bite-osxTests" */ = {
 			isa = XCConfigurationList;
@@ -861,6 +872,7 @@
 				EB10E973192DB77300D519D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
