@@ -49,6 +49,11 @@ typedef NS_ENUM(NSInteger, Extra3State) {
         NSUInteger count = [self.secondWrappedEnumerator countByEnumeratingWithState:secondState objects:buffer count:len];
         state->itemsPtr = secondState->itemsPtr;
         state->state = 2;
+        
+        // If the first emumerator was nil or empty, the mutationPtr may not have been set.
+        if (state->mutationsPtr == NULL) {
+            state->mutationsPtr = secondState->mutationsPtr;
+        }
         return count;
     }
 }

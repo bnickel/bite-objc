@@ -58,9 +58,14 @@
 
 - (BOOL)isDivisibleByKnownPrimes:(unsigned long)number
 {
+    unsigned long limit = ceilf(sqrtf(number));
     for (NSNumber *prime in self.primes) {
-        if (number % [prime unsignedLongValue] == 0) {
+        unsigned long primeValue = [prime unsignedIntegerValue];
+        if (number % primeValue == 0) {
             return YES;
+        }
+        if (primeValue > limit) {
+            break;
         }
     }
     

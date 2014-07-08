@@ -195,6 +195,13 @@
     XCTAssertEqualObjects(items, oneToFive, @"Should have appended.");
 }
 
+- (void)testAndNil
+{
+    XCTAssertEqualObjects([[BITE(nil) and:@[@1]] array], @[@1], @"Should have one element.");
+    XCTAssertEqualObjects([[BITE(@[@1]) and:nil] array], @[@1], @"Should have one element.");
+    XCTAssertEqualObjects([[BITE(nil) and:nil] array], @[], @"Should have zero elements.");
+}
+
 
 #pragma mark groupBy*:
 
