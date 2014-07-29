@@ -44,7 +44,6 @@
         
         buffer[i] = item;
         __autoreleasing id nextItemWithLongLifespan = [item valueForKeyPath:self.keyPath];
-        NSLog(@"item: %@", nextItemWithLongLifespan);
         state->extra[0] = (unsigned long)nextItemWithLongLifespan;
     }
     
