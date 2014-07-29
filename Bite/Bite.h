@@ -9,3 +9,4 @@
 #import "BITEEnumerator.h"
 #import "BITETuple.h"
 #import "BITEGrouping.h"
+#import "BITEKeyPathEnumerator.h"

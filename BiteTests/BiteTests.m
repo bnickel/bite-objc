@@ -366,4 +366,18 @@
     XCTAssertEqualObjects(shortestWord, @"bug", @"Should have got first word from the left.");
 }
 
+#pragma mark - Bite into
+
+- (void)testBiteInto
+{
+    BITEEnumerator *items = BITE_INTO(@{@"a":@{@"a":@{@"a":@{@"b":@1}, @"c": @2}}}, @"a");
+    
+    id innerMostItem = [items last:NULL];
+    XCTAssertEqualObjects(@{@"b":@1}, innerMostItem, @"Should have found the inner most item");
+    
+    id innerMostPassingTest = [[items filterWithFormat:@"c = 2"] last:NULL];
+    id expected = @{@"a":@{@"b":@1}, @"c": @2};
+    XCTAssertEqualObjects(expected, innerMostPassingTest, @"Should have found the inner most item");
+}
+
 @end
