@@ -1,7 +1,4 @@
 language: objective-c
-before_script:
-    - brew update
-    - brew upgrade xctool
 script:
     - xctool -project Bite.xcodeproj -sdk iphonesimulator -scheme Bite test
     - xctool -project Bite.xcodeproj -scheme Bite-osx test
