@@ -14,7 +14,7 @@ Concept based on the [Bite Java library](https://bitbucket.org/balpha/bite/wiki/
 ### Installation
 
 ```ruby
-pod 'Bite', '~> 0.2'
+pod 'Bite', '~> 0.3'
 ```
 
 ```objc
