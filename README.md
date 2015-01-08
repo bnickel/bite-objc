@@ -32,6 +32,20 @@ for (id obj in BITE(myArray)) {
 }
 ```
 
+### Creating a recursive bite
+
+```objc
+BITEEnumerator *bite = BITE_INTO(self, @selector(parentViewController));
+
+for (id viewController in bite) {
+    if ([viewController isKindOfClass:[MyViewController class]]) {
+        return viewController;
+    }
+}
+```
+
+Recursive bites iterate until they reach a `nil` value.
+
 ### Chaining bites
 
 ```objc
@@ -112,4 +126,12 @@ NSParameterAssert([e _2] == [f _2]);
     ```objc
     NSDictionary *networkUsersForSites = [[BITE(networkUsers) filterWithFormat:@"siteUrl != nil"]
                                                              dictionaryWithKeyPath:@"siteUrl" valuePath:@"self"];
+    ```
+
+3. Finding the parent table view for a cell.
+
+    ```objc
+    UITableView *tableView = [[BITE_INTO(cell, @selector(superview))
+                               filterWithFormat:@"self isKindOfClass: %@", [UITableView class]]
+                              first:NULL];
     ```
