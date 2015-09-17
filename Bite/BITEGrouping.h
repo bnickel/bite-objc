@@ -8,8 +8,8 @@
 
 #import "BITEEnumerator.h"
 
-@interface BITEGrouping : BITEEnumerator
+@interface BITEGrouping<ObjectType> : BITEEnumerator<ObjectType>
 - (instancetype)initWithEnumerator:(id<NSFastEnumeration>)enumerator key:(id<NSCopying>)key;
 - (instancetype)initWithEnumerator:(id<NSFastEnumeration>)enumerator key:(id<NSCopying>)key choke:(NSUInteger)choke;
-@property (nonatomic, readonly) id<NSCopying>key;
+@property (nonatomic, readonly) id<NSCopying> key;
 @end

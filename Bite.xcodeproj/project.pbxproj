@@ -49,6 +49,8 @@
 		EB10E97F192DB82F00D519D8 /* BiteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB10E8E9192A6D1B00D519D8 /* BiteTests.m */; };
 		EB10E980192DB83A00D519D8 /* PrimeEnumerator.m in Sources */ = {isa = PBXBuildFile; fileRef = EB10E908192A745F00D519D8 /* PrimeEnumerator.m */; };
 		EB10E981192DB84300D519D8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EB10E8E6192A6D1B00D519D8 /* InfoPlist.strings */; };
+		EB601A421BAA3A3E0044CE02 /* LinkedList.m in Sources */ = {isa = PBXBuildFile; fileRef = EB601A411BAA3A3E0044CE02 /* LinkedList.m */; settings = {ASSET_TAGS = (); }; };
+		EB601A431BAA3BFF0044CE02 /* LinkedList.m in Sources */ = {isa = PBXBuildFile; fileRef = EB601A411BAA3A3E0044CE02 /* LinkedList.m */; settings = {ASSET_TAGS = (); }; };
 		EB7335E619476922002E09F9 /* BITEUntilEnumerator.m in Sources */ = {isa = PBXBuildFile; fileRef = EB7335E419476922002E09F9 /* BITEUntilEnumerator.m */; };
 		EB7335E719476922002E09F9 /* BITEUntilEnumerator.m in Sources */ = {isa = PBXBuildFile; fileRef = EB7335E419476922002E09F9 /* BITEUntilEnumerator.m */; };
 		EB7335EB19476E32002E09F9 /* BITEAndEnumerator.m in Sources */ = {isa = PBXBuildFile; fileRef = EB7335E919476E32002E09F9 /* BITEAndEnumerator.m */; };
@@ -134,6 +136,8 @@
 		EB10E954192DB77200D519D8 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		EB10E955192DB77200D519D8 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		EB10E960192DB77200D519D8 /* Bite-osxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bite-osxTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB601A401BAA3A3E0044CE02 /* LinkedList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkedList.h; sourceTree = "<group>"; };
+		EB601A411BAA3A3E0044CE02 /* LinkedList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkedList.m; sourceTree = "<group>"; };
 		EB7335E319476922002E09F9 /* BITEUntilEnumerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BITEUntilEnumerator.h; sourceTree = "<group>"; };
 		EB7335E419476922002E09F9 /* BITEUntilEnumerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BITEUntilEnumerator.m; sourceTree = "<group>"; };
 		EB7335E819476E32002E09F9 /* BITEAndEnumerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BITEAndEnumerator.h; sourceTree = "<group>"; };
@@ -269,6 +273,8 @@
 			isa = PBXGroup;
 			children = (
 				EB10E8E9192A6D1B00D519D8 /* BiteTests.m */,
+				EB601A401BAA3A3E0044CE02 /* LinkedList.h */,
+				EB601A411BAA3A3E0044CE02 /* LinkedList.m */,
 				EB10E907192A745F00D519D8 /* PrimeEnumerator.h */,
 				EB10E908192A745F00D519D8 /* PrimeEnumerator.m */,
 				EB10E8E4192A6D1B00D519D8 /* Supporting Files */,
@@ -428,7 +434,7 @@
 		EB10E8C2192A6D1B00D519D8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Brian Nickel";
 				TargetAttributes = {
 					EB10E8D9192A6D1B00D519D8 = {
@@ -510,6 +516,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB601A421BAA3A3E0044CE02 /* LinkedList.m in Sources */,
 				EB10E909192A745F00D519D8 /* PrimeEnumerator.m in Sources */,
 				EB10E8EA192A6D1B00D519D8 /* BiteTests.m in Sources */,
 			);
@@ -545,6 +552,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB601A431BAA3BFF0044CE02 /* LinkedList.m in Sources */,
 				EB10E97F192DB82F00D519D8 /* BiteTests.m in Sources */,
 				EB10E980192DB83A00D519D8 /* PrimeEnumerator.m in Sources */,
 			);
@@ -602,6 +610,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -692,6 +701,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "BiteTests/BiteTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "personal.brian-nickel.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -708,6 +718,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Bite/Bite-Prefix.pch";
 				INFOPLIST_FILE = "BiteTests/BiteTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "personal.brian-nickel.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -730,6 +741,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "Benchmarks/Benchmarks-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "personal.brian-nickel.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -748,6 +760,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Benchmarks/Benchmarks-Prefix.pch";
 				INFOPLIST_FILE = "Benchmarks/Benchmarks-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "personal.brian-nickel.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -756,6 +769,7 @@
 		EB10E96F192DB77300D519D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -778,6 +792,7 @@
 		EB10E970192DB77300D519D8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -811,6 +826,7 @@
 				);
 				INFOPLIST_FILE = "BiteTests/BiteTests-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_BUNDLE_IDENTIFIER = "personal.brian-nickel.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = xctest;
@@ -831,6 +847,7 @@
 				GCC_PREFIX_HEADER = "Bite/Bite-Prefix.pch";
 				INFOPLIST_FILE = "BiteTests/BiteTests-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_BUNDLE_IDENTIFIER = "personal.brian-nickel.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = xctest;

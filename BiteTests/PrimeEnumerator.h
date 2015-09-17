@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface PrimeEnumerator : NSObject<NSFastEnumeration>
-- (NSArray *)knownPrimes;
+- (NSArray<NSNumber *> *)knownPrimes;
 @end

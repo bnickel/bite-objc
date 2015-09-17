@@ -11,6 +11,7 @@
 @interface BITEKeyPathEnumerator ()
 @property (nonatomic, readonly, strong) id object;
 @property (nonatomic, readonly, copy) NSString *keyPath;
+@property (nonatomic, assign) SEL selector;
 @end
 
 @implementation BITEKeyPathEnumerator
@@ -21,6 +22,16 @@
     if (self) {
         _object = object;
         _keyPath = [keyPath copy];
+    }
+    return self;
+}
+
+- (instancetype)initWithObject:(id)object selector:(SEL)selector
+{
+    self = [super init];
+    if (self) {
+        _object = object;
+        _selector = selector;
     }
     return self;
 }
@@ -43,7 +54,15 @@
         }
         
         buffer[i] = item;
-        __autoreleasing id nextItemWithLongLifespan = [item valueForKeyPath:self.keyPath];
+        __autoreleasing id nextItemWithLongLifespan;
+        
+        if (self.keyPath) {
+            nextItemWithLongLifespan = [item valueForKeyPath:self.keyPath];
+        } else {
+            id(*func)(id, SEL) = (id(*)(id, SEL))[item methodForSelector:self.selector];
+            nextItemWithLongLifespan = func(item, self.selector);
+        }
+        
         state->extra[0] = (unsigned long)nextItemWithLongLifespan;
     }
     

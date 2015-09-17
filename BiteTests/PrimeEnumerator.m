@@ -9,7 +9,7 @@
 #import "PrimeEnumerator.h"
 
 @interface PrimeEnumerator ()
-@property (nonatomic, strong) NSMutableArray *primes;
+@property (nonatomic, strong) NSMutableArray<NSNumber *> *primes;
 @end
 
 @implementation PrimeEnumerator
@@ -72,9 +72,9 @@
     return NO;
 }
 
-- (NSArray *)knownPrimes
+- (NSArray<NSNumber *> *)knownPrimes
 {
-    return self.primes;
+    return [self.primes copy];
 }
 
 @end

@@ -9,13 +9,14 @@
 #import <XCTest/XCTest.h>
 #import "Bite.h"
 #import "PrimeEnumerator.h"
+#import "LinkedList.h"
 
 @interface BiteTests : XCTestCase
 {
     PrimeEnumerator *primes;
-    NSMutableArray *numbers;
-    NSMutableArray *odd;
-    NSMutableArray *even;
+    NSMutableArray<NSNumber *> *numbers;
+    NSMutableArray<NSNumber *> *odd;
+    NSMutableArray<NSNumber *> *even;
 }
 
 @end
@@ -268,7 +269,7 @@
 
 - (void)testThatAllStopsAtTheFirstFailure
 {
-    BOOL thereAreNoPrimesGreaterThan99 = [BITE(primes) all:^BOOL(id obj) {
+    BOOL thereAreNoPrimesGreaterThan99 = [BITE_AS(primes, NSNumber) all:^BOOL(NSNumber *obj) {
         return [obj integerValue] < 100;
     }];
     XCTAssertFalse(thereAreNoPrimesGreaterThan99, @"What about 101");
@@ -293,7 +294,7 @@
 - (void)testThatFirstCanMatchNil
 {
     BOOL found;
-    id nilObject = [[[BITE(primes) filterWithFormat:@"SELF > 1000"] map:^id(id obj) {return nil;}] first:&found];
+    id nilObject = [[[BITE_AS(primes, NSNumber) filterWithFormat:@"SELF > 1000"] map:^id(NSNumber *obj) {return nil;}] first:&found];
     XCTAssertNil(nilObject, @"It should be nil.");
     XCTAssertTrue(found, @"We should have found one.");
 }
@@ -301,7 +302,7 @@
 - (void)testThatFirstReportsFailure
 {
     BOOL found;
-    NSNumber *firstPrimeGreaterThan1000 = [[[BITE(primes) take:10] filterWithFormat:@"SELF > 1000"] first:&found];
+    NSNumber *firstPrimeGreaterThan1000 = [[[BITE_AS(primes, NSNumber) take:10] filterWithFormat:@"SELF > 1000"] first:&found];
     XCTAssertFalse(found, @"We should not have found one.");
     XCTAssertNil(firstPrimeGreaterThan1000, @"It should be nil.");
 }
@@ -353,7 +354,7 @@
 
 - (void)testReduceRight
 {
-    id sum = [[BITE(primes) take:100] reduceRight:^id(id obj, id acc) {
+    id sum = [[BITE_AS(primes, NSNumber) take:100] reduceRight:^id(NSNumber *obj, id acc) {
         return @([acc integerValue] + [obj integerValue]);
     }];
     XCTAssertEqualObjects(@24133, sum, @"Should have summed first 100 primes.");
@@ -368,7 +369,7 @@
 
 #pragma mark - Bite into
 
-- (void)testBiteInto
+- (void)testBiteIntoKeyPath
 {
     BITEEnumerator *items = BITE_INTO(@{@"a":@{@"a":@{@"a":@{@"b":@1}, @"c": @2}}}, @"a");
     
@@ -378,6 +379,19 @@
     id innerMostPassingTest = [[items filterWithFormat:@"c = 2"] last:NULL];
     id expected = @{@"a":@{@"b":@1}, @"c": @2};
     XCTAssertEqualObjects(expected, innerMostPassingTest, @"Should have found the inner most item");
+    
+    NSArray *firstPrimes = [[BITE(primes) take:100] array];
+    NSArray *firstPrimesUsingEnumerator = [[BITE_INTO([firstPrimes asLinkedList], @"next") mapWithKeyPath:@"value"] array];
+    XCTAssertEqualObjects(firstPrimes, firstPrimesUsingEnumerator);
+}
+
+- (void)testBiteIntoSelector
+{
+    NSArray *firstPrimes = [[BITE(primes) take:100] array];
+    NSArray *firstPrimesUsingEnumerator = [[BITE_INTO_AS([firstPrimes asLinkedList], @selector(next), LinkedList) map:^id(LinkedList *obj) {
+        return obj.value;
+    }] array];
+    XCTAssertEqualObjects(firstPrimes, firstPrimesUsingEnumerator);
 }
 
 @end

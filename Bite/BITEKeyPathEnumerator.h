@@ -10,6 +10,7 @@
 
 @interface BITEKeyPathEnumerator : NSObject<NSFastEnumeration>
 -(instancetype)initWithObject:(id)object keyPath:(NSString *)keyPath;
+-(instancetype)initWithObject:(id)object selector:(SEL)selector;
 @end
 
 __attribute__((overloadable)) NS_INLINE BITEEnumerator *BITE_INTO(id object, NSString *keyPath) {
@@ -17,5 +18,7 @@ __attribute__((overloadable)) NS_INLINE BITEEnumerator *BITE_INTO(id object, NSS
 }
 
 __attribute__((overloadable)) NS_INLINE BITEEnumerator *BITE_INTO(id object, SEL selector) {
-    return BITE([[BITEKeyPathEnumerator alloc] initWithObject:object keyPath:NSStringFromSelector(selector)]);
+    return BITE([[BITEKeyPathEnumerator alloc] initWithObject:object selector:selector]);
 }
+
+#define BITE_INTO_AS(object, selector, kind) ((BITEEnumerator<kind *> *)BITE_INTO((object), (selector)))
