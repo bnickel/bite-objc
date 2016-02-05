@@ -49,8 +49,8 @@
 		EB10E97F192DB82F00D519D8 /* BiteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB10E8E9192A6D1B00D519D8 /* BiteTests.m */; };
 		EB10E980192DB83A00D519D8 /* PrimeEnumerator.m in Sources */ = {isa = PBXBuildFile; fileRef = EB10E908192A745F00D519D8 /* PrimeEnumerator.m */; };
 		EB10E981192DB84300D519D8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EB10E8E6192A6D1B00D519D8 /* InfoPlist.strings */; };
-		EB601A421BAA3A3E0044CE02 /* LinkedList.m in Sources */ = {isa = PBXBuildFile; fileRef = EB601A411BAA3A3E0044CE02 /* LinkedList.m */; settings = {ASSET_TAGS = (); }; };
-		EB601A431BAA3BFF0044CE02 /* LinkedList.m in Sources */ = {isa = PBXBuildFile; fileRef = EB601A411BAA3A3E0044CE02 /* LinkedList.m */; settings = {ASSET_TAGS = (); }; };
+		EB601A421BAA3A3E0044CE02 /* LinkedList.m in Sources */ = {isa = PBXBuildFile; fileRef = EB601A411BAA3A3E0044CE02 /* LinkedList.m */; };
+		EB601A431BAA3BFF0044CE02 /* LinkedList.m in Sources */ = {isa = PBXBuildFile; fileRef = EB601A411BAA3A3E0044CE02 /* LinkedList.m */; };
 		EB7335E619476922002E09F9 /* BITEUntilEnumerator.m in Sources */ = {isa = PBXBuildFile; fileRef = EB7335E419476922002E09F9 /* BITEUntilEnumerator.m */; };
 		EB7335E719476922002E09F9 /* BITEUntilEnumerator.m in Sources */ = {isa = PBXBuildFile; fileRef = EB7335E419476922002E09F9 /* BITEUntilEnumerator.m */; };
 		EB7335EB19476E32002E09F9 /* BITEAndEnumerator.m in Sources */ = {isa = PBXBuildFile; fileRef = EB7335E919476E32002E09F9 /* BITEAndEnumerator.m */; };
@@ -59,6 +59,9 @@
 		EBF30C73198825C700DC8856 /* BITEKeyPathEnumerator.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF30C711988237B00DC8856 /* BITEKeyPathEnumerator.m */; };
 		EBF30C74198829F700DC8856 /* BITEKeyPathEnumerator.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = EBF30C701988237B00DC8856 /* BITEKeyPathEnumerator.h */; };
 		EBF30C7519882A1B00DC8856 /* BITEKeyPathEnumerator.h in Headers */ = {isa = PBXBuildFile; fileRef = EBF30C701988237B00DC8856 /* BITEKeyPathEnumerator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EBF734041C65288100A8DE78 /* BITEEnumerateEnumerator.h in Headers */ = {isa = PBXBuildFile; fileRef = EBF734021C65288100A8DE78 /* BITEEnumerateEnumerator.h */; };
+		EBF734051C65288100A8DE78 /* BITEEnumerateEnumerator.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF734031C65288100A8DE78 /* BITEEnumerateEnumerator.m */; };
+		EBF734061C65288100A8DE78 /* BITEEnumerateEnumerator.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF734031C65288100A8DE78 /* BITEEnumerateEnumerator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,6 +148,8 @@
 		EBF30C701988237B00DC8856 /* BITEKeyPathEnumerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BITEKeyPathEnumerator.h; sourceTree = "<group>"; };
 		EBF30C711988237B00DC8856 /* BITEKeyPathEnumerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BITEKeyPathEnumerator.m; sourceTree = "<group>"; };
 		EBF30C7A198831AF00DC8856 /* Bite.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = Bite.podspec; sourceTree = "<group>"; };
+		EBF734021C65288100A8DE78 /* BITEEnumerateEnumerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BITEEnumerateEnumerator.h; sourceTree = "<group>"; };
+		EBF734031C65288100A8DE78 /* BITEEnumerateEnumerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BITEEnumerateEnumerator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,6 +247,8 @@
 				EB10E8F6192A700F00D519D8 /* BITEEnumerator.m */,
 				EB10E93D192BCF2200D519D8 /* BITEGrouping.h */,
 				EB10E93E192BCF2200D519D8 /* BITEGrouping.m */,
+				EBF734021C65288100A8DE78 /* BITEEnumerateEnumerator.h */,
+				EBF734031C65288100A8DE78 /* BITEEnumerateEnumerator.m */,
 				EB10E8F7192A700F00D519D8 /* BITESkipEnumerator.h */,
 				EB10E8F8192A700F00D519D8 /* BITESkipEnumerator.m */,
 				EB10E8F9192A700F00D519D8 /* BITETakeEnumerator.h */,
@@ -333,6 +340,7 @@
 				EBF30C7519882A1B00DC8856 /* BITEKeyPathEnumerator.h in Headers */,
 				EB10E977192DB7F900D519D8 /* Bite.h in Headers */,
 				EB10E978192DB7FE00D519D8 /* BITETuple.h in Headers */,
+				EBF734041C65288100A8DE78 /* BITEEnumerateEnumerator.h in Headers */,
 				EB10E976192DB7F400D519D8 /* BITEEnumerator.h in Headers */,
 				EB10E979192DB80B00D519D8 /* BITEGrouping.h in Headers */,
 			);
@@ -508,6 +516,7 @@
 				EB10E93F192BCF2200D519D8 /* BITEGrouping.m in Sources */,
 				EB10E902192A700F00D519D8 /* BITETakeEnumerator.m in Sources */,
 				EB10E903192A700F00D519D8 /* BITEMapEnumerator.m in Sources */,
+				EBF734051C65288100A8DE78 /* BITEEnumerateEnumerator.m in Sources */,
 				EB10E901192A700F00D519D8 /* BITESkipEnumerator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -544,6 +553,7 @@
 				EB10E974192DB7E100D519D8 /* BITETuple.m in Sources */,
 				EB10E975192DB7ED00D519D8 /* BITEEnumerator.m in Sources */,
 				EB10E97A192DB81000D519D8 /* BITEGrouping.m in Sources */,
+				EBF734061C65288100A8DE78 /* BITEEnumerateEnumerator.m in Sources */,
 				EB10E97E192DB81E00D519D8 /* BITEFilterEnumerator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

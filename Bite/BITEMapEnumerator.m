@@ -13,6 +13,7 @@
 @end
 
 @implementation BITEMapEnumerator
+
 - (instancetype)initWithEnumerator:(id<NSFastEnumeration>)enumerator mappingFunction:(id(^)(id))mappingFunction
 {
     self = [super initWithEnumerator:enumerator];

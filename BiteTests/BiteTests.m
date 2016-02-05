@@ -394,4 +394,18 @@
     XCTAssertEqualObjects(firstPrimes, firstPrimesUsingEnumerator);
 }
 
+#pragma mark - Enumerate
+
+- (void)testEnumerate
+{
+    NSArray *letters = @[@"A", @"B", @"C", @"D"];
+    NSArray *indices = @[@0, @1, @2, @3];
+    BITEEnumerator *enumerator = [BITE(letters) enumerate];
+    
+    XCTAssertEqualObjects([[enumerator mapWithFormat:@"_1"] array], indices);
+    XCTAssertEqualObjects([[enumerator mapWithFormat:@"_1"] array], indices, @"Indices should be consistent between runs");
+    XCTAssertEqualObjects([[enumerator mapWithFormat:@"_2"] array], letters);
+    
+}
+
 @end

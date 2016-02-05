@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @class BITEGrouping<ObjectType>;
+@class BITETuple<T1, T2, T3, T4, T5, T6>;
 
 @interface BITEEnumerator<ObjectType> : NSObject<NSFastEnumeration>
 
@@ -27,6 +28,8 @@
 - (BITEEnumerator *)mapWithExpression:(NSExpression *)expression;
 - (BITEEnumerator *)mapWithFormat:(NSString *)expressionFormat, ...;
 - (BITEEnumerator *)mapWithKeyPath:(NSString *)keyPath;
+
+- (BITEEnumerator<BITETuple<NSNumber *, id, id, id, id, id> *> *)enumerate; // Wraps items in a tuple (index, item)
 
 - (BITEEnumerator<ObjectType> *)filter:(BOOL (^)(ObjectType obj))test;
 - (BITEEnumerator<ObjectType> *)filterWithPredicate:(NSPredicate *)predicate;

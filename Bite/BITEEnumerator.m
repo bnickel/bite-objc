@@ -14,6 +14,7 @@
 #import "BITEUntilEnumerator.h"
 #import "BITEAndEnumerator.h"
 #import "BITEGrouping.h"
+#import "BITEEnumerateEnumerator.h"
 
 @interface BITEEnumerator ()
 @property (nonatomic, readonly) NSMutableArray *wrappedStates;
@@ -298,6 +299,11 @@
 - (BITEEnumerator *)mapWithKeyPath:(NSString *)keyPath
 {
     return [self mapWithExpression:[NSExpression expressionForKeyPath:keyPath]];
+}
+
+- (BITEEnumerator<BITETuple<NSNumber *,id,id,id,id,id> *> *)enumerate
+{
+    return [[BITEEnumerateEnumerator alloc] initWithEnumerator:self];
 }
 
 - (BITEEnumerator *)filter:(BOOL (^)(id))filter

@@ -8,13 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-@interface BITETuple : NSObject
-@property (nonatomic, strong) id _1;
-@property (nonatomic, strong) id _2;
-@property (nonatomic, strong) id _3;
-@property (nonatomic, strong) id _4;
-@property (nonatomic, strong) id _5;
-@property (nonatomic, strong) id _6;
+@interface BITETuple<T1, T2, T3, T4, T5, T6> : NSObject
+@property (nonatomic, strong) T1 _1;
+@property (nonatomic, strong) T2 _2;
+@property (nonatomic, strong) T3 _3;
+@property (nonatomic, strong) T4 _4;
+@property (nonatomic, strong) T5 _5;
+@property (nonatomic, strong) T6 _6;
 @end
 
 __attribute__((overloadable)) NS_INLINE BITETuple *BITE_TUPLE(id _1) {
